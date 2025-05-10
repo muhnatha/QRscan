@@ -14,8 +14,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <div class="flex justify-center items-center min-h-screen px-4">
-        <div class="p-6 bg-gray-100 rounded-md outline-1 outline-black border flex flex-col items-center justify-center max-w-md w-full">
+    <div class="flex justify-center items-center h-full min-h-screen w-full px-4">
+        <div class="p-6 bg-gray-100 rounded-md outline-1 outline-black border flex flex-col items-center justify-center max-w-lg w-full">
             <div class="text-center mb-5">
                 <h1 class="text-2xl font-bold">Scan QR Code</h1>
             </div>
