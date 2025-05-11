@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('activityName');
             $table->string('qrCode');
             $table->string('createdBy');
-            $table->foreign('createdBy')->references('id')->on('users')->onDelet('cascade');
+            $table->foreign('createdBy')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
