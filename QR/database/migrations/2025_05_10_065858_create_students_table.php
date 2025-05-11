@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('students', function (Blueprint $table) {
             $table->string('id')->primary();
-            $table->string('username');
-            $table->string('password');
-            $table->string('role');
-            $table->rememberToken();
+            $table->string('name');
+            $table->string('nisn');
+            $table->string('classId');
+            $table->foreign('classId')->references('id')->on('classes')->onDelete('cascade');
         });
-
-
     }
 
     /**
@@ -27,8 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
-        Schema::dropIfExists('password_reset_tokens');
-        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('students');
     }
 };
