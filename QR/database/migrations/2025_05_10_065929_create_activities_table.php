@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('activities', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('activityName');
-            $table->string('qrCode');
+            $table->string('qrCode')->nullable();
             $table->string('createdBy');
             $table->timestamps();
             $table->foreign('createdBy')->references('id')->on('users')->onDelete('cascade');
