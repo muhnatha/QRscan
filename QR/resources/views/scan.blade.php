@@ -1,3 +1,5 @@
+@php use SimpleSoftwareIO\QrCode\Facades\QrCode; @endphp
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +24,8 @@
             <div class="p-6 bg-white flex items-center justify-center">
                 {{-- <img src="{{ asset('storage/qr/' .$qr->image) }}" class="h-80 w-80" alt="QR Code"> --}}
                 {{-- <h1 class="text-2xl font-bold text-white text-center ">Ini buat nanti QR nya</h1> --}}
-                <img src="https://www.sbsaudilawyers.com/wp-content/uploads/2022/05/1200px-QR_Code_Example.svg.png" class="w-full" alt="QR Code">
+                <!-- <img src="https://www.sbsaudilawyers.com/wp-content/uploads/2022/05/1200px-QR_Code_Example.svg.png" class="w-full" alt="QR Code"> -->
+                {!! QrCode::size(250)->generate($qr) !!}
             </div>
         </div>
     </div>
