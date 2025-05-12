@@ -8,8 +8,10 @@ use App\Models\Activities;
 
 class ScanController extends Controller
 {
-    public function index() {
-        $latest = Activities::latest()->first();
-        return view('scan', ['qr' => $latest->qrCode ?? 'no-code']);
+    public function latestQr(){
+    $qr = Activities::latest()->first();
+    return response()->json([
+        'qr' => $qr->qrCode ?? 'no-code'
+    ]);
     }
 }
