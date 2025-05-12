@@ -18,9 +18,10 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
+        'id',
+        'username',
         'password',
-        'role'
+        'role',
     ];
 
     /**
@@ -45,4 +46,8 @@ class User extends Authenticatable
     //         'password' => 'hashed',
     //     ];
     // }
+
+    protected $primaryKey   = 'id';
+    public    $incrementing = false;
+    protected $keyType      = 'string';
 }
